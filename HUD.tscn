@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://dykivntxya01u"]
+
+[ext_resource type="FontFile" uid="uid://8m53peivxu0v" path="res://fonts/Xolonium-Regular.ttf" id="1_70edu"]
+[ext_resource type="Script" path="res://HUD.gd" id="1_pi67t"]
+
+[node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_pi67t")
+
+[node name="ScoreLabel" type="Label" parent="."]
+offset_left = 242.0
+offset_right = 282.0
+offset_bottom = 78.0
+theme_override_fonts/font = ExtResource("1_70edu")
+theme_override_font_sizes/font_size = 64
+text = "0"
+
+[node name="Message" type="Label" parent="."]
+offset_left = 75.0
+offset_top = 147.0
+offset_right = 423.0
+offset_bottom = 309.0
+theme_override_fonts/font = ExtResource("1_70edu")
+theme_override_font_sizes/font_size = 64
+text = "Dodge the
+creeps"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+offset_left = 158.0
+offset_top = 390.0
+offset_right = 335.0
+offset_bottom = 476.0
+theme_override_fonts/font = ExtResource("1_70edu")
+theme_override_font_sizes/font_size = 64
+text = "Start"
+
+[node name="Timer" type="Timer" parent="."]
