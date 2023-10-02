@@ -7,18 +7,31 @@
 script = ExtResource("1_pi67t")
 
 [node name="ScoreLabel" type="Label" parent="."]
-offset_left = 242.0
-offset_right = 282.0
-offset_bottom = 78.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -25.0
+offset_right = 25.0
+offset_bottom = 100.0
+grow_horizontal = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
 theme_override_fonts/font = ExtResource("1_70edu")
 theme_override_font_sizes/font_size = 64
 text = "0"
 
-[node name="Message" type="Label" parent="."]
-offset_left = 75.0
-offset_top = 147.0
-offset_right = 423.0
-offset_bottom = 309.0
+[node name="MessageLabel" type="Label" parent="."]
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -200.0
+offset_top = -150.0
+offset_right = 200.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 0
 theme_override_fonts/font = ExtResource("1_70edu")
 theme_override_font_sizes/font_size = 64
 text = "Dodge the
@@ -26,12 +39,20 @@ creeps"
 horizontal_alignment = 1
 
 [node name="StartButton" type="Button" parent="."]
-offset_left = 158.0
-offset_top = 390.0
-offset_right = 335.0
-offset_bottom = 476.0
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -200.0
+offset_right = 100.0
+offset_bottom = -100.0
 theme_override_fonts/font = ExtResource("1_70edu")
 theme_override_font_sizes/font_size = 64
 text = "Start"
 
-[node name="Timer" type="Timer" parent="."]
+[node name="MessageTimer" type="Timer" parent="."]
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="timeout" from="MessageTimer" to="." method="_on_message_timer_timeout"]
